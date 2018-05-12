@@ -1,0 +1,16 @@
+.cart-wrapper {
+	overflow-y: auto;
+	height: 92%;
+}
+
+.cart-footer {
+	padding: 20px;
+	box-sizing: border-box;
+	font-size: 16px;
+	height: 120px;
+	background-color: #ddd;
+}
+
+.cart-total {
+	margin-bottom: 20px;
+}
