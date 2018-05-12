@@ -1,0 +1,31 @@
+.item-card {
+	height: 100px;
+	width: 250px;
+	background-color: #DDD;
+	margin: 10px 5px;
+	padding: 5px;
+	box-shadow: 1px 1px 4px 1px;
+	box-sizing: border-box;
+	cursor: pointer;
+}
+
+.item-card:hover {
+	background-color: #BBB;
+}
+
+.item-name {
+	text-align: center;
+	font-weight: bold;
+	text-transform: capitalize;
+	text-decoration: underline;
+}
+
+.item-brand {
+	margin: 10px 0;
+}
+
+.item-footer {
+	display: flex;
+	justify-content: space-between;
+	padding: 7px;
+}

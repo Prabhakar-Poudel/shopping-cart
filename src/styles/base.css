@@ -1,0 +1,92 @@
+.app-wrapper {
+	height: 90%;
+	width: 100%;
+	padding: 10px 0;
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+}
+
+.left-pane, .right-pane {
+	flex-basis: 50%;
+	border-right: 1px solid #ccc;
+	display: flex;
+	flex-direction: column;
+}
+
+.pane-head {
+	font-weight: bold;
+	font-size: 18px;
+	text-align: center;
+	border-bottom: 1px solid #ccc;
+}
+
+.modal-card-header {
+	text-align: center;
+	text-transform: capitalize;
+	border-bottom: 1px solid #ccc;
+}
+
+.card-content {
+	display: flex;
+	flex-direction: column;
+}
+
+.dummy-image {
+	height: 100px;
+	width: 140px;
+	background-color: #ddd;
+	margin: auto;
+	border: 1px solid #000;
+	color: royalblue;
+	font-size: 78px;
+	cursor: default;
+}
+
+.quantity-selection {
+	display: flex;
+	margin: 10px auto;
+}
+
+.quantity-selection div {
+	border: 1px solid #000;
+	box-sizing: border-box;
+	height: 25px;
+	min-width: 30px;
+	text-align: center;
+	line-height: 25px;
+}
+
+.quantity-button {
+	background-color: #bbb;
+	box-sizing: border-box;
+	height: 25px;
+	width: 25px;
+	font-size: 16px;
+	font-weight: bold;
+	outline: none;
+	cursor: pointer;
+}
+
+.quantity-button.left {
+	border-top-left-radius: 50%;
+	border-bottom-left-radius: 50%;
+	border: 1px solid #000;
+}
+
+.quantity-button.right {
+	border-top-right-radius: 50%;
+	border-bottom-right-radius: 50%;
+	border: 1px solid #000;
+}
+
+.total-amount {
+	margin: 10px 0;
+	padding: 5px 0;
+	border-top: 1px solid #ccc;
+}
+
+.card-actions {
+	display: flex;
+	justify-content: space-between;
+}
