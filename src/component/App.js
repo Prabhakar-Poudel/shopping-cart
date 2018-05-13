@@ -69,9 +69,9 @@ class App extends Component {
 		return (
 			<div className="app">
 				<div color="default" className="header">
-					<div onClick={this.goToInventory}>Home <span role="img">🏚</span></div>
-					<Button variant="raised" style={{ backgroundColor: 'yellowgreen'}}
-						onClick={this.goToCart}>View <span role="img">🛒</span></Button>
+					<div onClick={this.goToInventory}>Shopping List</div>
+					<Button variant="raised" className="cart-button"
+						onClick={this.goToCart}>{cartItems.length}</Button>
 					{ cartItems.length > 0 &&
 					<Button variant="raised" color="primary"
 						onClick={this.goToCheckout}>Checkout</Button>
