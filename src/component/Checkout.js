@@ -60,7 +60,7 @@ class Checkout extends Component {
 		return (
 			<Paper className="checout-page">
 				<div className="checkout-header">
-					Items you are placing order for
+					Items present in your cart
 				</div>
 				<List>
 					{this.props.cartItems.map(item => {
@@ -75,53 +75,55 @@ class Checkout extends Component {
 					})}
 				</List>
 				<div className="checkout-total">Amount you pay: <strong>{numeral(sum).format('0,0')} Rs</strong></div>
-				<div className="checkout-header">
-					Please furnish the following details to make an order
-				</div>
-				<form className="user-details" autoComplete="off">
-					<TextField
-						required
-						id="name"
-						label="Your name"
-						value={name}
-						error={nameError}
-						onChange={this.handleChange('name')}
-						margin="normal"
-					/>
-					<TextField
-						required
-						id="email"
-						type="email"
-						label="Your E-mail"
-						value={email}
-						error={emailError}
-						onChange={this.handleChange('email')}
-						margin="normal"
-					/>
-					<TextField
-						required
-						id="phone"
-						max={10}
-						label="Your phone number"
-						value={phone}
-						error={phoneError}
-						onChange={this.handleChange('phone')}
-						margin="normal"
-					/>
-					<TextField
-						required
-						id="address"
-						label="Delivery address"
-						value={address}
-						error={addressError}
-						onChange={this.handleChange('address')}
-						margin="normal"
-					/>
-					<div className="form-action">
-						<Button variant="raised" color="primary" 
-							size="large" onClick={this.handleBuy}>Buy Now</Button>
+				<div style={{ marginTop: 40 }}>
+					<div className="checkout-header">
+						Please furnish the following details to make an order
 					</div>
-				</form>
+					<form className="user-details" autoComplete="off">
+						<TextField
+							required
+							id="name"
+							label="Your name"
+							value={name}
+							error={nameError}
+							onChange={this.handleChange('name')}
+							margin="normal"
+						/>
+						<TextField
+							required
+							id="email"
+							type="email"
+							label="Your E-mail"
+							value={email}
+							error={emailError}
+							onChange={this.handleChange('email')}
+							margin="normal"
+						/>
+						<TextField
+							required
+							id="phone"
+							max={10}
+							label="Your phone number"
+							value={phone}
+							error={phoneError}
+							onChange={this.handleChange('phone')}
+							margin="normal"
+						/>
+						<TextField
+							required
+							id="address"
+							label="Delivery address"
+							value={address}
+							error={addressError}
+							onChange={this.handleChange('address')}
+							margin="normal"
+						/>
+						<div className="form-action">
+							<Button variant="raised" color="primary" 
+								size="large" onClick={this.handleBuy}>Buy Now</Button>
+						</div>
+					</form>
+				</div>
 			</Paper>
 		);
 	}

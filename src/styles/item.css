@@ -1,6 +1,7 @@
 .item-card {
 	height: 100px;
 	width: 250px;
+	display: inline-block;
 	background-color: #DDD;
 	margin: 10px 5px;
 	padding: 5px;

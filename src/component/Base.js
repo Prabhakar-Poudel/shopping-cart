@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Modal, Card, CardContent, CardHeader, Button, CardActions  } from 'material-ui';
+import { Modal, Card, CardContent, CardHeader, Button, CardActions } from 'material-ui';
 import numeral from 'numeral';
 
 import Inventory from './Inventory';
