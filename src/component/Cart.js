@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Button } from 'material-ui';
+import numeral from 'numeral';
 
 import CartItem from './CrtItem';
 
 import '../styles/cart.css';
-import { Button } from 'material-ui';
 
 class Cart extends Component {
 
@@ -22,7 +23,7 @@ class Cart extends Component {
 						);
 					})}
 					<div className="cart-footer">
-						<div className="cart-total">Total Amount  = {sum}</div>
+						<div className="cart-total">Total Amount  = {numeral(sum).format('0,0')} Rs</div>
 						<Button variant="raised" color="primary"
 							onClick={this.props.checkoutClicked}>Proceed to checkout</Button>
 					</div>

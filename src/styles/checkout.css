@@ -1,0 +1,33 @@
+.checout-page {
+	height: 92%;
+	overflow-y: auto;
+	padding-bottom: 10px;
+	box-sizing: border-box;
+}
+
+.checkout-header {
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+	margin: 10px 0;
+}
+
+.checkout-list-item {
+	border-bottom: 1px solid #EEE;
+	text-transform: capitalize;
+}
+
+.checkout-total {
+	margin: 20px;
+}
+
+.user-details {
+	margin: 0 20px;
+	display: flex;
+	flex-direction: column;
+}
+
+.form-action {
+	margin-top: 20px;
+	text-align: center;
+}

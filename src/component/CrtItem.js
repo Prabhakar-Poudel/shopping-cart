@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button, CardContent, CardHeader } from 'material-ui';
+import numeral from 'numeral';
 
 import '../styles/cartItem.css';
 
@@ -15,7 +16,7 @@ class CartItem extends Component {
 				}/>
 				<CardContent>
 					<div> 
-						Cost: <strong>{price} X {quantity} = {price*quantity}</strong>
+						Cost: <strong>{price} X {quantity} = {numeral(price*quantity).format('0,0')} Rs</strong>
 					</div>
 				</CardContent>
 			</Card>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Modal, Card, CardContent, CardHeader, Button, CardActions  } from 'material-ui';
+import numeral from 'numeral';
 
 import Inventory from './Inventory';
 
@@ -83,7 +84,7 @@ class Base extends Component {
 								<button className="quantity-button right" onClick={this.incrementQuantity}>+</button>
 							</div>
 							<div>Select number of quantity to buy</div>
-							<div className="total-amount">Total: <strong>{this.state.totalAmount} Rs</strong></div>
+							<div className="total-amount">Total: <strong>{numeral(this.state.totalAmount).format('0,0')} Rs</strong></div>
 						</CardContent>
 						<CardActions disableActionSpacing className="card-actions">
 							<Button variant="raised" color="secondary" onClick={this.handleModalClose}>Cancel</Button>

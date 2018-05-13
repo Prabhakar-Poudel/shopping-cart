@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import numeral from 'numeral';
 
 import '../styles/item.css';
 
@@ -11,7 +12,7 @@ class Item extends Component {
 				<div className="item-name">{name}</div>
 				<div className="item-brand">From: <em>{brand}</em></div>
 				<div className="item-footer">
-					<div>Rs {price}</div>
+					<div>Rs {numeral(price).format('0,0')}</div>
 					<div>{quantity} Available</div>
 					{discount > 0 ?
 						<div>{discount}% off</div>

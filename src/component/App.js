@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Button } from 'material-ui';
+import { Button, Snackbar } from 'material-ui';
 
 import Base from './Base';
 import Cart from './Cart';
+import Checkout from './Checkout';
 import demoData from '../demo/demo-data';
 
 import '../styles/app.css';
@@ -20,6 +21,7 @@ class App extends Component {
 			cartItems: [],
 			inventory: [...demoData],
 			currentlyVisible: this.constants.inventory,
+			showOrderPlaced: false,
 		};
 
 		this.addToCart = this.addToCart.bind(this);
@@ -27,6 +29,7 @@ class App extends Component {
 		this.goToCheckout = this.goToCheckout.bind(this);
 		this.goToInventory = this.goToInventory.bind(this);
 		this.removeFromCart = this.removeFromCart.bind(this);
+		this.orderPlaced = this.orderPlaced.bind(this);
 	}
 
 	addToCart(item, quantity) {
@@ -52,6 +55,15 @@ class App extends Component {
 		this.setState({ cartItems, inventory });
 	}
 
+	orderPlaced() {
+		this.setState({
+			cartItems: [],
+			inventory: [...demoData],
+			currentlyVisible: this.constants.inventory,
+			showOrderPlaced: true,
+		});
+	}
+
 	goToCart() {
 		this.setState({ currentlyVisible: this.constants.cart });
 	}
@@ -65,7 +77,7 @@ class App extends Component {
 	}
 	
 	render() {
-		const { currentlyVisible, cartItems } = this.state;
+		const { currentlyVisible, cartItems, showOrderPlaced } = this.state;
 		return (
 			<div className="app">
 				<div color="default" className="header">
@@ -86,6 +98,23 @@ class App extends Component {
 					<Cart cartItems={this.state.cartItems} checkoutClicked={this.goToCheckout}
 						removeClicked={this.removeFromCart}/>
 				}
+				{
+					currentlyVisible === this.constants.checkout &&
+					<Checkout cartItems={this.state.cartItems} orderPlaced={this.orderPlaced} />
+				}
+				<Snackbar
+					anchorOrigin={{
+						vertical: 'bottom',
+						horizontal: 'left',
+					}}
+					open={showOrderPlaced}
+					autoHideDuration={3000}
+					onClose={() => this.setState({showOrderPlaced: false})}
+					ContentProps={{
+						'aria-describedby': 'sent',
+					}}
+					message={<span id="sent">Order Placed sucessfully</span>}
+				/>
 			</div>
 		);
 	}

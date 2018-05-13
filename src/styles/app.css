@@ -23,6 +23,7 @@
 
 .header div {
 	cursor: pointer;
+	font-weight: bold;
 }
 
 button.cart-button{
