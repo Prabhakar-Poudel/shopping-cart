@@ -31,7 +31,7 @@ class Inventory extends Component {
 		};
 
 
-		this.filterPrice = ['All', 'Under 100', '100-500', '500 and above'];
+		this.filterPrice = ['All', 'Under 200', '200-500', '500 and above'];
 		this.filterDiscount = ['All', '10% and more', '20% and more', '30% and more', '40% and more'];
 
 		this.handleSort = this.handleSort.bind(this);
@@ -101,8 +101,8 @@ class Inventory extends Component {
 	handleAllFilters(priceFilterIndex, discountFilterIndex, checkedBrands, sortBy) {
 		let inventory = [...this.props.inventory];
 		switch(priceFilterIndex) {
-		case 1: inventory = inventory.filter(item => item.price < 100); break;
-		case 2: inventory = inventory.filter(item => item.price >= 100 && item.price < 500); break;
+		case 1: inventory = inventory.filter(item => item.price < 200); break;
+		case 2: inventory = inventory.filter(item => item.price >= 200 && item.price < 500); break;
 		case 3: inventory = inventory.filter(item => item.price > 500); break;
 		default: // todo
 		}
@@ -163,8 +163,10 @@ class Inventory extends Component {
 						<div className="filter-header">Price</div>
 						<List className="filter-body">
 							{this.filterPrice.map((item, index) => {
+								const activeClass = this.state.priceFilterIndex === index ? 'active' : null;
 								return <ListItem key={index} className="option" 
-									onClick={this.handlePriceFilterSelect(index)}><ListItemText  primary={item} /></ListItem>;
+									onClick={this.handlePriceFilterSelect(index)}>
+									<ListItemText classes={{primary: activeClass}} primary={item} /></ListItem>;
 							})}
 						</List>
 					</div>
@@ -172,8 +174,10 @@ class Inventory extends Component {
 						<div className="filter-header">Discount</div>
 						<List className="filter-body">
 							{this.filterDiscount.map((item, index) => {
-								return <ListItem key={index} className="option" 
-									onClick={this.handleDiscountFilterSelect(index)}><ListItemText  primary={item} /></ListItem>;
+								const activeClass = this.state.discountFilterIndex === index ? 'active' : null;
+								return <ListItem key={index} className="option"
+									onClick={this.handleDiscountFilterSelect(index)}>
+									<ListItemText  classes={{primary: activeClass}} primary={item} /></ListItem>;
 							})}
 						</List>
 					</div>

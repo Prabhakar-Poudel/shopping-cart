@@ -13,8 +13,6 @@
 .item-card:hover {
 	background-color: #BBB;
 	box-shadow: 1px 1px 4px 1px;
-	border: 1px solid #aaa;
-	box-sizing: border-box;
 }
 
 .item-name {
